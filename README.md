@@ -61,28 +61,44 @@ background-color: rgb(28, 195, 72);
 
 ---
 
-## Step 4: Create the Board component
+## Step 4: Create the Board component with 5 lights
 
 **Brief:**  
-Build a `Board` component which represents the 5x5 grid where the `Cell`s will be placed. The grid should be a 2d 5x5 array of bools which is stored in the component's state. 
+Build a `Board` component which holds the multiple `Cell` components. The board should render lights based on an array of bools. Hardcode an array of bools and update the rendering code to display cells based on this array (The javascript `map` function will be useful for this). 
+
+E.g. `[true, false, true, true, true]` should show ● ○ ● ● ●
 
 **Acceptance Criteria:**
 - ✅ `Board` contains a functional component that imports `Cell`.
-- ✅ `Board` contains a 5x5 2d array of `bool` which represents the state of each light.
-- ✅ `Board` should pass the index of the array and the light state into `Cell`s props.
+- ✅ `Board` contains a (1d) array of `bool`s which represents the state of each light.
+- ✅ `Board` should pass the light state into `Cell`s props.
 - ✅ The app renders the `Board`.
-- ✅ `Board` renders a 5x5 grid of cells based on the 2d array.
+- ✅ `Board` renders a row of correctly lit cells based on the array.
 
 ---
 
-## Step 5: Create a static board of lights for testing the game
+## Step 5: Create a static 5x5 board of lights
 
 **Brief:**  
-Instead of an empty 2d array, programatically set some of the values in the array to `true` so that the `Cell`s light up. The `Cell`s should light up depending on which values in the array are `true`.
+Create a 5x5 2d array of `bool`s and populate them manually (hardcode the values). The array should contain 5 separate arrays of size 5.
+
+i.e.
+```
+myBoard = [
+ [true, true, true, true, true],
+ [true, true, true, true, true],
+ [true, true, true, true, true],
+ [true, true, true, true, true],
+ [true, true, true, true, true]
+]
+```
+
+Update the rendering code so that it can process a 2d array. It should display 25 lights in a 5x5 layout.
+Change some of the values in the array so there is a mix of `true` and `false`. The `Cell`s should still light up depending on which values in the array are `true`.
 
 **Acceptance Criteria:**
-- ✅ The board state is not empty (i.e. not all `false`)
-- ✅ The correct `Cell`s are lit up.
+- ✅ `Board` renders a 5x5 grid of lights.
+- ✅ `Board` contains a 5x5 2d array containing the state of each light.
 
 ---
 
